@@ -1,0 +1,42 @@
+/*Estilo do corpo*/
+body{
+    background-color: #da9f9f;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+/*cabeçalho*/
+ header{
+    background-color: #f18c8c;
+    color: black;
+    padding: 20px;
+    text-align: center;
+ }
+/*Parágrafo padrão*/
+p{
+    color:black
+}
+/*Parágrafo com destaque*/
+.destaque{
+    background-color:#ff0000;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 25px;
+
+}
+/*Botão*/
+button{
+    background-color: #705353;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+
+}
+
+button:hover{
+    background-color: #4b3737;
+}
