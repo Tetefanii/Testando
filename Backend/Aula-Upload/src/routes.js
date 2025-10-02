@@ -44,7 +44,7 @@ r.put('/images/:id', upload.single('image'), async (req, res) => {
         fs.unlink(oldPath,(err)=>{
             if(err)console.warn("Erro ao Remover", err)
         })
-        res.json({message:"Imagem excluída com sucesso"})
+        res.json({message:"Imagem atualizado com sucesso"})
     }catch(error){
         res.status(500).json({error: error.message})
     }
@@ -53,7 +53,7 @@ r.put('/images/:id', upload.single('image'), async (req, res) => {
 //DELETE - http://localhost:3000/api/images/1
 //body - form-data - key: image (file)
 //Delete Imagem
-r.delete('/images/: id', async (req, res) => {
+r.delete('/images/:id', async (req, res) => {
     try{
         const{id}=req.params
         const[rows] = await db.execute("SELECT * FROM images WHERE id= ?",[id])

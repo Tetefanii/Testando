@@ -7,8 +7,8 @@ import { dirname } from 'path'
 const app = express()
 app.use(express.json())
 
-const__filename = fileURLToPath(import.meta.url)
-const__dirname = dirname(__filename)
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 app.use('/uploads', express.static(path.join(__dirname, '../uploads')))
 
