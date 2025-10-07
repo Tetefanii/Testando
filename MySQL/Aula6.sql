@@ -40,7 +40,7 @@ select ename,sal,job,deptno from emp where sal > ALL (select distinct sal from e
 
 select ename, hiredate, job, deptno from emp where deptno = (select deptno from emp where ename = 'Allen');
 
-use emp;
+use recursoshumanos;
 
 select deptno, ename, job from emp where deptno = (select deptno from dept where dname = 'Sales');
 
@@ -51,3 +51,26 @@ select ename, sal, hiredate, deptno from emp where deptno = (select deptno from 
 select e.ename,e.job,d.dname from emp e,dept d where e.deptno = d.deptno;
 
 select emp.ename,emp.job,dept.dname from emp,dept where emp.deptno=dept.deptno;
+
+SELECT d.department_id, d.department_name, e.employee_id
+FROM departments d LEFT JOIN employees e
+ON d.department_id = e.department_id
+WHERE e.employee_id IS NULL;
+
+SELECT e.employee_id, e.first_name, e.last_name, m.first_name AS
+manager_first_name, m.last_name AS manager_last_name
+FROM employees e INNER JOIN employees m
+ON e.manager_id = m.employee_id
+WHERE m.last_name = 'King';
+
+SELECT e.employee_id, e.first_name, e.last_name, d.department_name
+FROM employees e INNER JOIN departments d
+ON e.department_id = d.department_id
+WHERE d.department_name LIKE '%Res%';
+
+SELECT e.employee_id, e.first_name, e.last_name
+FROM employees e
+INNER JOIN employees m
+ON e.job_id = m.job_id
+WHERE m.employee_id = 100;
+
