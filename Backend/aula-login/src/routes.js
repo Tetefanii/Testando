@@ -16,4 +16,4 @@ router.get('/users/profile', authMiddleware, profile)
 router.put('/users/me', authMiddleware, updateMe)
 router.delete('/users/:id', authMiddleware, deleteUser)
 
-export default router
+export default router;
